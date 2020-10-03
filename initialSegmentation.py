@@ -63,7 +63,7 @@ def makeClassificationStructure(tract_indices,streamlines,clusterDict,Names,inde
 		    jsonStreamlines[e] = np.transpose(bundle_streamlines[e]).round(2)
 
 		# create color for each tract
-		color=list(cm.nipy_spectral(bnames*50))[0:3]
+		color=list(cm.nipy_spectral(bnames*10))[0:3]
 		
 		# identify count of bundle
 		count = len(bundle_streamlines)
