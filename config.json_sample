@@ -1,0 +1,6 @@
+{
+	"number_bundles":	"3",
+	"dwi":	"./data/dwi/dwi.nii.gz",
+	"tractogram":	"./data/track/track.tck",
+	"classification":	"./data/wmc/classification.mat"
+}
