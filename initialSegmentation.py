@@ -22,7 +22,7 @@ def quickClean(streamlines,number_bundles):
 		qb = QuickBundles(threshold=thrs)
 		clusters = qb.cluster(streamlines)
 		n_clusters = len(clusters)
-		thrs=thrs+1
+		thrs=thrs+.1
 	
 	print(thrs)
 
