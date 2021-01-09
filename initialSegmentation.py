@@ -25,7 +25,7 @@ def quickClean(streamlines,number_bundles):
 		thrs=thrs+1
 		if n_clusters == (number_bundles-1):
 			thrs=thrs-2
-			for i in np.linspace(thrs,thrs+1,num=42):
+			for i in np.linspace(thrs,thrs+1,num=1000):
 				print(i)
 				qb = QuickBundles(threshold=i)
 				clusters = qb.cluster(streamlines)
