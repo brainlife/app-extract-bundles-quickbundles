@@ -3,6 +3,32 @@
 
 # Segment tracts into multiple bundles using Quickbundles
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Splits each tract of a white matter classification (wmc) into a chosen number of sub-bundles with DIPY QuickBundles and outputs a new wmc classification.**
+
+For each tract in the input classification, runs QuickBundles on its streamlines and adjusts the distance threshold until the requested number of clusters is reached, then writes a new wmc in which every tract is replaced by its numbered sub-bundles. Use it to study within-tract organisation; the tractogram must be the one the classification indexes into.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.438](https://doi.org/10.25663/brainlife.app.438)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `dwi` | `neuro/dwi` | yes | Source dwi for tractogram. Only used in loading |
+| `tractogram` | `neuro/track/tck` | yes | Whole-brain tractogram the classification indexes into. |
+| `classification` | `neuro/wmc` | yes | White matter classification (wmc) whose tracts are split into sub-bundles. |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `wmc` | `neuro/wmc` | New white matter classification with each input tract split into number_bundles QuickBundles sub-bundles. |
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `number_bundles` | string | `3` | Number of sub-bundles to split each tract into. |
+
+Runtime: container `brainlife/pyafq:dev`; 2 CPUs; 2 h walltime.
+
+<!-- brainlife-app:end -->
+
 This app will This app will bundle tracks into multiple subbundles using Dipy's Quickbundles.
 
 ### Authors
